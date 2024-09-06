@@ -21,6 +21,11 @@ module.exports = {
         unique: true,
         type: Sequelize.TEXT
       },
+      imgTopic: {
+        allowNull: false,
+        
+        type: Sequelize.TEXT
+      },
       createdAt: {
         defaultValue: new Date(),
         type: Sequelize.DATE
