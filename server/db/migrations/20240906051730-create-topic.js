@@ -15,11 +15,11 @@ module.exports = {
         type: Sequelize.TEXT
       },
       createdAt: {
-        allowNull: false,
+        defaultValue: new Date(),
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        defaultValue: new Date(),
         type: Sequelize.DATE
       }
     });
