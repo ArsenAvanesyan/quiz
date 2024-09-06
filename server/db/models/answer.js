@@ -11,14 +11,21 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Answer.init({
-    questionId: DataTypes.INTEGER,
-    variants: DataTypes.TEXT,
-    answear: DataTypes.BOOLEAN,
-  },
-
-    {
-      sequelize,
-      modelName: 'Answer',
-    });
+    questionsId: {
+      references: {
+        model: "Questions",
+        key: "id"
+      },
+        type: DataTypes.INTEGER
+      },
+      variants: {
+        allowNull: false,
+        unique: true,
+        type: DataTypes.TEXT
+      }
+  }, {
+    sequelize,
+    modelName: 'Answer',
+  });
   return Answer;
 };
