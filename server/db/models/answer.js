@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Answer.init({
-    questionsId: {
+    questionId: {
       references: {
         model: "Questions",
         key: "id"
