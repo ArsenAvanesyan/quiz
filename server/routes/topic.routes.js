@@ -14,4 +14,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+router.get("/:topicId", async (req, res) => {
+  try {
+    // console.log(req.query);
+    const { topicId } = req.params
+
+    const topic = await TopicServices.getTopicById(+topicId);
+    res.status(200).json({ message: "success", topic });
+  } catch ({ message }) {
+    console.log(message, "error");
+    res.status(500).json({ message });
+  }
+});
+
 module.exports = router;

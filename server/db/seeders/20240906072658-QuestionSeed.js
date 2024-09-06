@@ -6,57 +6,48 @@ module.exports = {
     await queryInterface.bulkInsert('Questions', [
       {
         topicId: 1,
-        title: '11grth11jd@mail.ru',
+        title: 'В какой стране появились самые первые бумажные деньги',
         imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
         
       },
       {
         topicId: 1,
-        title: '22ddgfhhd2jd@mail.ru',
+        title: 'Валюта Перу звучит в русском варианте также как название одной из специй. Как она называется',
         imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
         
       },
       {
         topicId: 1,
-        title: '333dhytkiuld3jd@mail.ru',
+        title: 'В каком году в СССР была проведена Хрущевская денежная реформа:',
         imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
       },
       {
         topicId: 1,
-        title: '333dadad3jd@mail.ru',
+        title: 'В каких двух городах России печатают денежные знаки',
         imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
       },
       {
         topicId: 1,
-        title: '33dhgrega33jd@mail.ru',
+        title: 'С какого года начали отмечать День России',
         imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
       },
       {
         topicId: 2,
-        title: '11dascsd11jd@mail.ru',
+        title: 'Первый русский царь',
         imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
         
       },
       {
         topicId: 2,
-        title: '222fvgdrgrewfjd@mail.ru',
+        title: 'Бородинское сражение',
         imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
       },
       {
         topicId: 2,
-        title: '333ewfsfewtew3jd@mail.ru',
+        title: 'Наименование лыковой обуви русских крестьян',
         imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
       },
-      {
-        topicId: 2,
-        title: '33fewscddgf33jd@mail.ru',
-        imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
-      },
-      {
-        topicId: 2,
-        title: '33efewfytry33jd@mail.ru',
-        imgTopic:'https://i.pinimg.com/564x/0c/02/07/0c02078f9bba44110d1c152e23e4a29e.jpg'
-      },
+      
   ], {});
   },
 
