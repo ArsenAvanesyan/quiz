@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Questions.init({
     topicId: DataTypes.INTEGER,
-    title: DataTypes.TEXT
+    title: DataTypes.TEXT,
+    imgTopic: DataTypes.TEXT
+
   }, {
     sequelize,
     modelName: 'Questions',
