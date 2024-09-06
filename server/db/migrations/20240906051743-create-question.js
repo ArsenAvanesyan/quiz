@@ -10,7 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       topicId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Topics',
+          key: 'id'
+        }
       },
       title: {
         allowNull: false,
