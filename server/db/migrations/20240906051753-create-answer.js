@@ -10,7 +10,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       questionId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Questions',
+          key: 'id'
+        }
+
       },
       variants: {
         allowNull: false,
