@@ -9,18 +9,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      questionsId: {
+      questionId: {
         type: Sequelize.INTEGER
       },
       variants: {
+        allowNull: false,
+        unique: true,
         type: Sequelize.TEXT
       },
       createdAt: {
-        allowNull: false,
+        defaultValue: new Date(),
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        defaultValue: new Date(),
         type: Sequelize.DATE
       }
     });
