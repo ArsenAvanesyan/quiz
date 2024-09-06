@@ -4,16 +4,13 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Topic extends Model {
-    static associate({Question}) {
-      this.hasMany(Question, {foreignKey: 'topicId'})
+    static associate({ Question }) {
+      this.hasMany(Question, { foreignKey: 'topicId' })
     }
   }
   Topic.init({
-    title: {
-        allowNull: false,
-        unique: true,
-        type: DataTypes.TEXT
-      }
+    title: DataTypes.TEXT,
+    img: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Topic',

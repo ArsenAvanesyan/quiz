@@ -4,14 +4,14 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Answer extends Model {
-    static associate({Questions}) {
+    static associate({ Questions }) {
       this.belongsTo(Questions, {
         foreignKey: 'questionId'
       })
     }
   }
   Answer.init({
-    questionId: {
+    questionsId: {
       references: {
         model: "Questions",
         key: "id"

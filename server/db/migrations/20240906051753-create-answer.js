@@ -14,8 +14,11 @@ module.exports = {
       },
       variants: {
         allowNull: false,
-        unique: true,
         type: Sequelize.TEXT
+      },
+      answear: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         defaultValue: new Date(),
