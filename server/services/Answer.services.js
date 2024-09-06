@@ -1,12 +1,22 @@
 const {Answer} = require('../db/models')
 
 class AnswerServices {
-    static getOneCharacterByPk = async(id) => {
-        const answer = Answer.findByPk(id)
-        if (answer) {
-            return answer.get()
+    static getAllAnswer = async() => {
+        try {
+            const answer = await (Answer.findAll({ where: query})).map((top) => top.get())
+            return answer
+        } catch ({message}) {
+            return { status: 'error', message}
         }
-        return answer instanceof Answer
+    }
+
+    static getOneAnswerByPk = async(id) => {
+        try {
+            const answer = Answer.findByPk(id)
+            return answer.get() 
+        } catch ({message}) {
+            return { status: 'error', message}
+        }
     }
 }
 
