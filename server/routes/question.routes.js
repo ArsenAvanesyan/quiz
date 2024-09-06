@@ -16,3 +16,4 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/:questionId')
+module.exports = router

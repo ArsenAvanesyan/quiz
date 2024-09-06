@@ -1,24 +1,27 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-const topic = require('./topic');
+"use strict";
+const { Model } = require("sequelize");
+const topic = require("./topic");
 module.exports = (sequelize, DataTypes) => {
-  class Questions extends Model {
-    static associate({Topic}) {
+  class Question extends Model {
+    static associate({ Topic, Answer }) {
       this.belongsTo(Topic, {
-        foreignKey: 'topicId'
-      })
+        foreignKey: "topicId",
+      });
+      this.hasMany(Answer, {
+        foreignKey: "questionId",
+      });
     }
   }
-  Questions.init({
-    topicId: DataTypes.INTEGER,
-    title: DataTypes.TEXT,
-    imgTopic: DataTypes.TEXT
-
-  }, {
-    sequelize,
-    modelName: 'Questions',
-  });
-  return Questions;
+  Question.init(
+    {
+      topicId: DataTypes.INTEGER,
+      title: DataTypes.TEXT,
+      imgTopic: DataTypes.TEXT,
+    },
+    {
+      sequelize,
+      modelName: "Question",
+    }
+  );
+  return Question;
 };
