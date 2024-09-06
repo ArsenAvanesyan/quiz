@@ -4,8 +4,8 @@ import { axiosRequest } from '../services/axiosInstance';
 import './App.css'
 import Navbar from '../widgets/navbar/Navbar';
 import MainPage from '../pages/mainPage/MainPage';
-import FirstTopicPage from '../pages/firstTopic/FirstTopicPage'
-import SecondTopicPage from '../pages/secondTopic/secondTopicPage'
+import TopicPages from '../pages/topic/TopicPages';
+import Queston from '../pages/topic/Queston';
 
 
 
@@ -13,29 +13,14 @@ import SecondTopicPage from '../pages/secondTopic/secondTopicPage'
 
 function App() {
 
-  const first = 'quiz1'
-  const second = 'quiz2'
-
-  const [questionsFT, setFirstTopic] = useState([]);
-  const [questionsST, setSecondTopic] = useState([]);
-
-  const getAllquestionsOfFirstTopic = async () => {
+  const [topics, setTopics] = useState([]);
+  
+  const getAllTopics = async () => {
     try {
-      const response = await axiosRequest.get('/');
+      const response = await axiosRequest.get('/topic');
+      
       if (response.status === 200) {
-        setFirstTopic(response.data);
-      }
-    } catch ({ response }) {
-      // попадают 400 и 500
-      console.log(response.data.message);
-    }
-  };
-
-  const getAllquestionsOfSecondTopic = async () => {
-    try {
-      const response = await axiosRequest.get('/');
-      if (response.status === 200) {
-        setSecondTopic(response.data);
+        setTopics(response.data.topic);
       }
     } catch ({ response }) {
       // попадают 400 и 500
@@ -45,28 +30,28 @@ function App() {
 
 
   useEffect(() => {
-    getAllquestionsOfFirstTopic()
-    getAllquestionsOfSecondTopic()
-
+    getAllTopics()
+   
   }, [])
 
   return (
     <>
-    <Navbar firstTopic={first} secondTopic={second}/>
+    <Navbar/>
     
     <Routes>
         
         <Route
-          path={`/quiz/:topicId/question/:questionId`}
-          element={<FirstTopicPage title={'hello!1'} questions={questionsFT}/>} 
+          path={`/topics`}
+          element={<TopicPages setTopics={setTopics} topics={topics} />} 
         />
-        
+    
         <Route path='/' element={<MainPage/>}/>
 
         <Route
-          path={`/quiz/:topicId/question/:questionId`} 
-          element={<SecondTopicPage title={'hello!2'}/>} 
+          path={`/topics/:topicId`}
+          element={<Queston />} 
         />
+
       </Routes>
     </>
   )

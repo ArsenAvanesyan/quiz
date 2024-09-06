@@ -18,6 +18,16 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.flex {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  margin: 30px ;
+}
+
 span {
   margin: 15px;
 }

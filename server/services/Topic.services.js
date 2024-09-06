@@ -1,14 +1,13 @@
-const {Topic} = require('../db/models')
+const { Model } = require("sequelize");
+const { Topic, Question } = require("../db/models");
 
 class TopicServices {
-    static getAllTopic = async () => {
-        try {
-        const topics = await (Topic.findAll({ where: query})).map((top) => top.get())
-        return topics
-    } catch ({message}) {
-        return {status: 'error', message}
-    }
-}
+
+  static getAllTopic = async () =>
+    (await Topic.findAll()).map((top) => top.get());
+
+  static getTopicById = async (id) =>
+    await Topic.findOne({ where: { id }, include: Question });
 }
 
-module.exports = TopicServices
+module.exports = TopicServices;
