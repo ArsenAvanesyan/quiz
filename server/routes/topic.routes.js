@@ -1,4 +1,6 @@
+
 const router = require("express").Router();
+
 
 const TopicServices = require("../services/Topic.services");
 
@@ -29,3 +31,4 @@ router.get("/:topicId", async (req, res) => {
 });
 
 module.exports = router;
+
